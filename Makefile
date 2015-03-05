@@ -1,10 +1,6 @@
 CFLAGS=-Wall -g
 
-all: ./bin/ex1 ./bin/ex3
-
-./bin/ex1: ex1
-
-./bin/ex3: ex3
+all: ex1 ex3 ex4
 
 clean:
-	rm -f ./bin/*
+	rm -f ex1 ex3 ex4
