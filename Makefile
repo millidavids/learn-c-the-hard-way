@@ -1,4 +1,5 @@
 CFLAGS=-Wall -g
+CC=gcc
 
 SRCS=$(wildcard *.c)
 
