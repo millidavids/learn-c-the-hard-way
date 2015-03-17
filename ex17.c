@@ -23,9 +23,8 @@ struct Connection {
     struct Database *db;
 };
 
-void die(const char *message, struct Connection *conn)
+void die(const char *message)
 {
-    Database_close(conn);
     if(errno) {
         perror(message);
     } else {
@@ -110,7 +109,6 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
     addr->set = 1;
     // WARNING: bug, read the "How To Break It" and fix this
     char *res = strncpy(addr->name, name, MAX_DATA);
-    res[-1] = '\0';
     // demonstrate the strncpy bug
     if(!res) die("Name copy failed");
 
